@@ -1,0 +1,1601 @@
+{
+	"info": {
+		"_postman_id": "4d401792-1071-4582-ac66-f71b3483b310",
+		"name": "Vendor_Management_System",
+		"description": "Develop a Vendor Management System using Django and Django REST Framework. This  \nsystem will handle vendor profiles, track purchase orders, and calculate vendor performance  \nmetrics.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29389936"
+	},
+	"item": [
+		{
+			"name": "Create a new vendor.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vendor B\",\r\n  \"contact_details\": \"Contact details for Vendor B\",\r\n  \"address\": \"Address of Vendor B\",\r\n  \"vendor_code\": \"VB002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				},
+				"description": "Create a new vendor with mentioned fields"
+			},
+			"response": [
+				{
+					"name": "Create a new vendor.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Vendor M\",\r\n  \"contact_details\": \"Contact details for Vendor M\",\r\n  \"address\": \"Address of Vendor M\",\r\n  \"vendor_code\": \"VBu902\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:18:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Vendor M\",\n    \"contact_details\": \"Contact details for Vendor M\",\n    \"address\": \"Address of Vendor M\",\n    \"vendor_code\": \"VBu902\",\n    \"on_time_delivery_rate\": 0,\n    \"quality_rating_avg\": 0,\n    \"average_response_time\": 0,\n    \"fulfillment_rate\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendor_code\":\"VB002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				},
+				"description": "Create Access Token using JWT and set the token auto expiration after 30 min"
+			},
+			"response": [
+				{
+					"name": "Create Access Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendor_code\":\"VB002\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:18:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTEwOTQ5OCwiaWF0IjoxNzE1MDIzMDk4LCJqdGkiOiIzYmIxNzE2NWU1MjA0MmE5YjEyYzJhZTYxM2I3OTViMSIsInVzZXJfaWQiOjJ9.UibequgnYn-y9VaR5y2J8S3PuvneFfGsqIV7X7dIC_s\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDI0ODk4LCJpYXQiOjE3MTUwMjMwOTgsImp0aSI6IjYyOTdkN2U2OWM2NzQyMTE5YjE1OTFhYzY2MmUzNmMxIiwidXNlcl9pZCI6Mn0.DdvCkiZLXiKfvhpGEpxnRdUibJw_-u6_N3dxUogHxYI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTEwMzUyNiwiaWF0IjoxNzE1MDE3MTI2LCJqdGkiOiI4MTZmNjc4N2UyODU0M2Y0YWRjNjc1ZWFhN2UxNDkxNiIsInVzZXJfaWQiOjJ9.kMVqQOGgvFqKcM3SW_XfiBMfyH7vLo3ok0JxERmfTV4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"refresh",
+						""
+					]
+				},
+				"description": "Create Refresh token to create new access token after every 30 minutes"
+			},
+			"response": [
+				{
+					"name": "Create Refresh Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTEwOTQ5OCwiaWF0IjoxNzE1MDIzMDk4LCJqdGkiOiIzYmIxNzE2NWU1MjA0MmE5YjEyYzJhZTYxM2I3OTViMSIsInVzZXJfaWQiOjJ9.UibequgnYn-y9VaR5y2J8S3PuvneFfGsqIV7X7dIC_s\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"refresh",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:18:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDI0OTI0LCJpYXQiOjE3MTUwMjMwOTgsImp0aSI6IjBkOTU2YzQ0Mjg1NjRkYzFhZTcwMGY3MmE2MTAwZjMxIiwidXNlcl9pZCI6Mn0.SIlPkpN-S9p4SeuB7n5wUP8eo5142jJ1nomRBDBOT5g\"\n}"
+				}
+			]
+		},
+		{
+			"name": "List all vendors.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTEwMzUyNiwiaWF0IjoxNzE1MDE3MTI2LCJqdGkiOiI4MTZmNjc4N2UyODU0M2Y0YWRjNjc1ZWFhN2UxNDkxNiIsInVzZXJfaWQiOjJ9.kMVqQOGgvFqKcM3SW_XfiBMfyH7vLo3ok0JxERmfTV4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						""
+					]
+				},
+				"description": "Listout entire vendors along with there details"
+			},
+			"response": [
+				{
+					"name": "List all vendors.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTEwMzUyNiwiaWF0IjoxNzE1MDE3MTI2LCJqdGkiOiI4MTZmNjc4N2UyODU0M2Y0YWRjNjc1ZWFhN2UxNDkxNiIsInVzZXJfaWQiOjJ9.kMVqQOGgvFqKcM3SW_XfiBMfyH7vLo3ok0JxERmfTV4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:11:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "517"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Vendor A\",\n        \"contact_details\": \"Contact details for Vendor A\",\n        \"address\": \"Address of Vendor A\",\n        \"vendor_code\": \"VA001\",\n        \"on_time_delivery_rate\": 0.3333333333333333,\n        \"quality_rating_avg\": 4.233333333333333,\n        \"average_response_time\": 55878.848317,\n        \"fulfillment_rate\": 1\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Vendor B\",\n        \"contact_details\": \"Contact details for Vendor B\",\n        \"address\": \"Address of Vendor B\",\n        \"vendor_code\": \"VB002\",\n        \"on_time_delivery_rate\": 1,\n        \"quality_rating_avg\": 4.2,\n        \"average_response_time\": 144570.347709,\n        \"fulfillment_rate\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve a specific vendor's details.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"2",
+						""
+					]
+				},
+				"description": "Retrieve a particular ventor entire order detail by using query parameters."
+			},
+			"response": [
+				{
+					"name": "Retrieve a specific vendor's details.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:17:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "267"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Vendor A\",\n    \"contact_details\": \"Vendor A Contact details\",\n    \"address\": \"Address of Vendor A\",\n    \"vendor_code\": \"VA001\",\n    \"on_time_delivery_rate\": 0.3333333333333333,\n    \"quality_rating_avg\": 4.233333333333333,\n    \"average_response_time\": 55878.848317,\n    \"fulfillment_rate\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a vendor's details(Update Details)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contact_details\": \"Vendor B Contact details\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"2",
+						""
+					]
+				},
+				"description": "Partially and fully update the vendor details"
+			},
+			"response": [
+				{
+					"name": "Update a vendor's details(Update Details)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contact_details\": \"Vendor A Contact details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:16:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "267"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Vendor A\",\n    \"contact_details\": \"Vendor A Contact details\",\n    \"address\": \"Address of Vendor A\",\n    \"vendor_code\": \"VA001\",\n    \"on_time_delivery_rate\": 0.3333333333333333,\n    \"quality_rating_avg\": 4.233333333333333,\n    \"average_response_time\": 55878.848317,\n    \"fulfillment_rate\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a vendor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"2",
+						""
+					]
+				},
+				"description": "Delete a particular vendor"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a purchase order.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"po_number\": \"POB001\",\r\n  \"vendor\": 1,\r\n  \"delivery_date\": \"2024-05-12T12:00:00Z\",\r\n  \"items\": {\"item\": \"Product C\"},\r\n  \"quantity\": 150,\r\n  \"status\": \"pending\",\r\n  \"quality_rating\": 4.0,\r\n  \"acknowledgment_date\": \"2024-05-04T09:00:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				},
+				"description": "Create a purchse rder of specific vendor"
+			},
+			"response": [
+				{
+					"name": "Create a purchase order.",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"po_number\": \"POB004\",\r\n  \"vendor\": 3,\r\n  \"delivery_date\": \"2024-05-12T12:00:00Z\",\r\n  \"items\": {\"item\": \"Product D\"},\r\n  \"quantity\": 120,\r\n  \"status\": \"pending\",\r\n  \"quality_rating\": 4.2,\r\n  \"acknowledgment_date\": \"2024-05-04T09:00:00Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:16:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"po_number\": \"POB004\",\n    \"order_date\": \"2024-05-06T19:16:00.557813Z\",\n    \"delivery_date\": \"2024-05-12T12:00:00Z\",\n    \"items\": {\n        \"item\": \"Product D\"\n    },\n    \"quantity\": 120,\n    \"status\": \"pending\",\n    \"quality_rating\": 4.2,\n    \"issue_date\": \"2024-05-06T19:16:00.557813Z\",\n    \"acknowledgment_date\": \"2024-05-04T09:00:00Z\",\n    \"vendor\": 3\n}"
+				}
+			]
+		},
+		{
+			"name": "List all purchase orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					]
+				},
+				"description": "Listout the entire purchase orders"
+			},
+			"response": [
+				{
+					"name": "List all purchase orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:04:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1188"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"po_number\": \"POB001\",\n        \"order_date\": \"2024-05-06T17:53:24.813136Z\",\n        \"delivery_date\": \"2024-05-07T12:00:00Z\",\n        \"items\": {\n            \"item\": \"Product C\"\n        },\n        \"quantity\": 150,\n        \"status\": \"completed\",\n        \"quality_rating\": 4,\n        \"issue_date\": \"2024-05-06T17:53:24.813136Z\",\n        \"acknowledgment_date\": \"2024-05-07T09:00:00Z\",\n        \"vendor\": 1\n    },\n    {\n        \"id\": 2,\n        \"po_number\": \"POB002\",\n        \"order_date\": \"2024-05-06T17:55:29.088585Z\",\n        \"delivery_date\": \"2024-05-07T10:00:00Z\",\n        \"items\": {\n            \"item\": \"Product A\"\n        },\n        \"quantity\": 100,\n        \"status\": \"completed\",\n        \"quality_rating\": 4.5,\n        \"issue_date\": \"2024-05-06T17:55:29.089586Z\",\n        \"acknowledgment_date\": \"2024-05-06T08:30:00Z\",\n        \"vendor\": 1\n    },\n    {\n        \"id\": 4,\n        \"po_number\": \"POB003\",\n        \"order_date\": \"2024-05-06T18:07:09.552326Z\",\n        \"delivery_date\": \"2024-05-07T14:00:00Z\",\n        \"items\": {\n            \"item\": \"Product B\"\n        },\n        \"quantity\": 200,\n        \"status\": \"completed\",\n        \"quality_rating\": 4.2,\n        \"issue_date\": \"2024-05-06T18:07:09.552326Z\",\n        \"acknowledgment_date\": \"2024-05-08T11:00:00Z\",\n        \"vendor\": 1\n    },\n    {\n        \"id\": 5,\n        \"po_number\": \"PB003\",\n        \"order_date\": \"2024-05-06T18:50:29.652291Z\",\n        \"delivery_date\": \"2024-05-07T14:00:00Z\",\n        \"items\": {\n            \"item\": \"Product B\"\n        },\n        \"quantity\": 200,\n        \"status\": \"completed\",\n        \"quality_rating\": 4.2,\n        \"issue_date\": \"2024-05-06T18:50:29.652291Z\",\n        \"acknowledgment_date\": \"2024-05-08T11:00:00Z\",\n        \"vendor\": 3\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "List all purchase orders with an option to filter by vendor.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/?vendor=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						""
+					],
+					"query": [
+						{
+							"key": "vendor",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Listout the entire purchase orders of a particular vendor"
+			},
+			"response": [
+				{
+					"name": "List all purchase orders with an option to filter by vendor.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/?vendor=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							],
+							"query": [
+								{
+									"key": "vendor",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:13:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "892"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"po_number\": \"POB001\",\n        \"order_date\": \"2024-05-06T17:53:24.813136Z\",\n        \"delivery_date\": \"2024-05-07T12:00:00Z\",\n        \"items\": {\n            \"item\": \"Product C\"\n        },\n        \"quantity\": 150,\n        \"status\": \"completed\",\n        \"quality_rating\": 4,\n        \"issue_date\": \"2024-05-06T17:53:24.813136Z\",\n        \"acknowledgment_date\": \"2024-05-07T09:00:00Z\",\n        \"vendor\": 1\n    },\n    {\n        \"id\": 2,\n        \"po_number\": \"POB002\",\n        \"order_date\": \"2024-05-06T17:55:29.088585Z\",\n        \"delivery_date\": \"2024-05-07T10:00:00Z\",\n        \"items\": {\n            \"item\": \"Product A\"\n        },\n        \"quantity\": 100,\n        \"status\": \"completed\",\n        \"quality_rating\": 4.5,\n        \"issue_date\": \"2024-05-06T17:55:29.089586Z\",\n        \"acknowledgment_date\": \"2024-05-06T08:30:00Z\",\n        \"vendor\": 1\n    },\n    {\n        \"id\": 4,\n        \"po_number\": \"POB003\",\n        \"order_date\": \"2024-05-06T18:07:09.552326Z\",\n        \"delivery_date\": \"2024-05-07T14:00:00Z\",\n        \"items\": {\n            \"item\": \"Product B\"\n        },\n        \"quantity\": 200,\n        \"status\": \"completed\",\n        \"quality_rating\": 4.2,\n        \"issue_date\": \"2024-05-06T18:07:09.552326Z\",\n        \"acknowledgment_date\": \"2024-05-08T11:00:00Z\",\n        \"vendor\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Retrieve details of a specific purchase order.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"1",
+						""
+					]
+				},
+				"description": "Fetch the entire details of a particular order"
+			},
+			"response": [
+				{
+					"name": "Retrieve details of a specific purchase order.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:13:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"po_number\": \"POB001\",\n    \"order_date\": \"2024-05-06T17:53:24.813136Z\",\n    \"delivery_date\": \"2024-05-07T12:00:00Z\",\n    \"items\": {\n        \"item\": \"Product C\"\n    },\n    \"quantity\": 150,\n    \"status\": \"completed\",\n    \"quality_rating\": 4,\n    \"issue_date\": \"2024-05-06T17:53:24.813136Z\",\n    \"acknowledgment_date\": \"2024-05-07T09:00:00Z\",\n    \"vendor\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Update a purchase order.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"1",
+						""
+					]
+				},
+				"description": "Update order details partially and fully"
+			},
+			"response": [
+				{
+					"name": "Update a purchase order.",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:14:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"po_number\": \"POB001\",\n    \"order_date\": \"2024-05-06T17:53:24.813136Z\",\n    \"delivery_date\": \"2024-05-07T12:00:00Z\",\n    \"items\": {\n        \"item\": \"Product C\"\n    },\n    \"quantity\": 150,\n    \"status\": \"completed\",\n    \"quality_rating\": 4,\n    \"issue_date\": \"2024-05-06T17:53:24.813136Z\",\n    \"acknowledgment_date\": \"2024-05-07T09:00:00Z\",\n    \"vendor\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a purchase order.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDE5MDI5LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6ImJjYzA3NTg4MTE5NzQ5YjdhMTcwMGRhMmZjNTQzZmRiIiwidXNlcl9pZCI6Mn0.WuL8Fd9JcJVQGLc2nuEoCaHykdIi_oMaIDvusSRFkE8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/purchase_orders/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"purchase_orders",
+						"3",
+						""
+					]
+				},
+				"description": "Delete purchase order"
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a vendor's performance metrics.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MDIyOTU3LCJpYXQiOjE3MTUwMTcxMjYsImp0aSI6Ijc1ZjgwYTM3N2IzZTQ2NzViMWRhMzkzMDY0NzNlODhjIiwidXNlcl9pZCI6Mn0.wKjxv-7NzKLReplyhjkHlgxI8wn10C96AorQpAMbAU8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vendors/1/performance/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vendors",
+						"1",
+						"performance",
+						""
+					]
+				},
+				"description": "Retrieves the calculated performance metrics for a specific vendor. And return data including on_time_delivery_rate, quality_rating_avg,  \naverage_response_time, and fulfillment_rate.\n\nBackend Logic for Performance Metrics  \nOn-Time Delivery Rate:  \n● Calculated each time a PO status changes to 'completed'.  \n● Logic: Count the number of completed POs delivered on or before  \ndelivery_date and divide by the total number of completed POs for that vendor.\n\nQuality Rating Average:  \n● Updated upon the completion of each PO where a quality_rating is provided.  \n● Logic: Calculate the average of all quality_rating values for completed POs of  \nthe vendor.  \nAverage Response Time:  \n● Calculated each time a PO is acknowledged by the vendor.  \n● Logic: Compute the time difference between issue_date and  \nacknowledgment_date for each PO, and then find the average of these times  \nfor all POs of the vendor.\n\nFulfilment Rate:  \n● Calculated upon any change in PO status.  \n● Logic: Divide the number of successfully fulfilled POs (status 'completed'  \nwithout issues) by the total number of POs issued to the vendor."
+			},
+			"response": [
+				{
+					"name": "Retrieve a vendor's performance metrics.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/1/performance/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"1",
+								"performance",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 06 May 2024 19:14:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.11.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"Vendor A\",\n    \"on_time_delivery_rate\": 0.3333333333333333,\n    \"quality_rating_avg\": 4.233333333333333,\n    \"average_response_time\": 55878.848317,\n    \"fulfillment_rate\": 1\n}"
+				}
+			]
+		}
+	]
+}

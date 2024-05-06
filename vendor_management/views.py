@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
-from .models import Vendor,PurchaseOrder,HistoricalPerformance
+from .models import Vendor,PurchaseOrder
 from .serializers import VendorSerializer,PurchaseOrderSerializer,VendorPerformanceSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
@@ -53,7 +53,7 @@ class VendorListCreate(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+   
     def get(self, request):
         vendors = Vendor.objects.all()
         serializer = VendorSerializer(vendors,many=True)
@@ -142,7 +142,7 @@ class PurchaseOrderRetrieveUpdateDelete(APIView):
         purchase_order.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
+# Performance matrics 
 
 class VendorPerformance(APIView):
     authentication_classes = [JWTAuthentication]

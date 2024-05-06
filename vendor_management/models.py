@@ -5,6 +5,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils import timezone
 from django.db.models import Avg
+from django.db.models import F
 
 
 class Vendor(models.Model):
@@ -36,9 +37,9 @@ class PurchaseOrder(models.Model):
     
     def clean(self):
         super().clean()
-        if self.delivery_date < self.order_date:
+        if self.order_date and self.delivery_date and self.delivery_date < self.order_date:
             raise ValidationError("Delivery date cannot be before order date")
-
+        
     def save(self, *args, **kwargs):
         self.full_clean()  
         super().save(*args, **kwargs)
@@ -62,7 +63,7 @@ def calculate_performance_metrics(vendor):
     total_completed_orders = completed_orders.count()
 
     if total_completed_orders > 0:
-        on_time_deliveries = completed_orders.filter(delivery_date__lte=timezone.now()).count()
+        on_time_deliveries = completed_orders.filter(delivery_date__lte=F('acknowledgment_date')).count()
         vendor.on_time_delivery_rate = on_time_deliveries / total_completed_orders
 
         vendor.quality_rating_avg = completed_orders.aggregate(Avg('quality_rating'))['quality_rating__avg']

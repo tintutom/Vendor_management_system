@@ -14,5 +14,6 @@ urlpatterns = [
     path('purchase_orders/<int:po_id>/', PurchaseOrderRetrieveUpdateDelete.as_view(), name='purchase-order-retrieve-update-delete'),
     
     path('purchase_orders/<int:po_id>/acknowledge/', AcknowledgePurchaseOrder.as_view(), name='acknowledge-purchase-order'),
+#calculate performance metrics for a specific vendor.
     path('vendors/<int:vendor_id>/performance/', VendorPerformance.as_view(), name='vendor-performance'),
 ]
